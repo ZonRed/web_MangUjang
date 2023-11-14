@@ -103,6 +103,7 @@
                         <!-- Tombol Kembali ke Halaman Utama -->
                         <div class="mt-4">
                             <a href="index" class="btn btn-primary">Kembali ke Halaman Utama</a>
+                            <a href="" class="btn btn-primary">Kembali ke Halaman Mobile</a>
                         </div>
                     </div>
                 </div>
