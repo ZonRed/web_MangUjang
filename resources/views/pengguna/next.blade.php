@@ -39,7 +39,7 @@
                 </a>
         
                 <!-- Tombol Kembali ke Aplikasi -->
-                <a class="btn btn-light m-8" href="mangujang://page">
+                <a class="btn btn-light m-8" href="mangujangapp://page">
                     <i class="fas fa-arrow-left"></i> Kembali ke Aplikasi
                 </a>
             </div>
@@ -113,10 +113,15 @@
                    
 
                         <!-- Tombol Kembali ke Halaman Utama -->
-                        <div class="mt-4">
-                            <a href="index" class="btn btn-primary">Kembali ke Halaman Utama</a>
-                            <a href="mangujang://page" class="btn btn-primary">Kembali ke Halaman Mobile</a>
-                        </div>
+                    <div class="container mt-3">
+                    <div class="d-flex gap-10 justify-content-center">
+                            <a href="index" class="btn btn-primary mx-5">
+                            <i class="fas fa-arrow-left"></i>Kembali ke Halaman Utama
+                        </a>
+                            <a href="mangujangapp://page" class="btn btn-primary mx-5 ">
+                            <i class="fas fa-arrow-left"></i>Kembali ke Halaman Mobile
+                        </a>
+                    </div>
                     </div>
 
 
