@@ -22,15 +22,17 @@
         <div class="container">
             <a class="navbar-brand" href="#">Berita Mang Ujang</a>
             
-            <!-- Tombol Kembali -->
-            <a class="btn btn-light ml-auto" href="index">
-            <i class="fas fa-arrow-left"></i> Kembali ke Web
+         <!-- Tombol Kembali -->
+         <div class=" d-flex gap-2">
+            <a class="btn btn-light mx-2" href="index">
+                <i class="fas fa-arrow-left"></i> Kembali ke Web
             </a>
-            
+    
             <!-- Tombol Kembali ke Aplikasi -->
-             <a class="btn btn-light m-8" href="yourcustomscheme://">
+            <a class="btn btn-light m-8" href="yourcustomscheme://">
                 <i class="fas fa-arrow-left"></i> Kembali ke Aplikasi
             </a>
+        </div>
         </div>
     </nav>
 
