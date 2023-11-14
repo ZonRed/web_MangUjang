@@ -47,6 +47,10 @@ Route::get('/D_Hasil', function () {
     return view('admin.D_Hasil');
 })->middleware('auth');
 
+Route::get('/D_InputHasil', function () {
+    return view('admin.D_InputHasil');
+})->middleware('auth');
+
 Route::get('/D_Statistik', function () {
     return view('admin.D_Statistik');
 })->middleware('auth');
@@ -58,6 +62,7 @@ Route::get('/Dashboard', function () {
 Route::get('/D_User', function () {
     return view('admin.D_User');
 })->middleware('auth');
+
 
 
 

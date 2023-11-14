@@ -39,7 +39,7 @@
                 </a>
         
                 <!-- Tombol Kembali ke Aplikasi -->
-                <a class="btn btn-light m-8" href="yourcustomscheme://">
+                <a class="btn btn-light m-8" href="mangujang://page">
                     <i class="fas fa-arrow-left"></i> Kembali ke Aplikasi
                 </a>
             </div>
@@ -115,7 +115,7 @@
                         <!-- Tombol Kembali ke Halaman Utama -->
                         <div class="mt-4">
                             <a href="index" class="btn btn-primary">Kembali ke Halaman Utama</a>
-                            <a href="" class="btn btn-primary">Kembali ke Halaman Mobile</a>
+                            <a href="mangujang://page" class="btn btn-primary">Kembali ke Halaman Mobile</a>
                         </div>
                     </div>
 

@@ -32,7 +32,7 @@
    <style>
         .card {
             height: 100%;
-            bottom: 20%;
+            bottom: 30%;
         }
 
         .card-img-top {

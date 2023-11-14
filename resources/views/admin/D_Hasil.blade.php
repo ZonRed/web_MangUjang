@@ -42,8 +42,8 @@
 </head>
 
 <body>
-    <!-- Sidebar -->
-    <div class="sidebar">
+     <!-- Sidebar -->
+     <div class="sidebar">
         <ul class="nav flex-column">
             <li class="nav-item">
                 <a class="nav-link" href="Dashboard">Dashboard</a>
@@ -55,6 +55,9 @@
                 <a class="nav-link" href="D_Hasil">Hasil Pertandingan</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="D_InputHasil">Input Hasil Pertandingan</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="D_Statistik">Statistik Pemain</a>
             </li>
             <li class="nav-item">
@@ -64,7 +67,7 @@
                 <a class="nav-link" href="index">Home Web</a>
             </li>
         </ul>
-    </div>
+    </div> 
 
     <!-- Content area for Hasil Pertandingan -->
     <section id="hasil-pertandingan" class="py-5" style="margin-top: 80px;">
