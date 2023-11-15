@@ -71,6 +71,14 @@
     <section id="input-hasil-pertandingan" class="py-5">
         <div class="container-fluid content-area">
             <h2>Admin Dashboard - Input Hasil Pertandingan</h2>
+    
+        <!-- user admin tampilan -->
+        <div style="position: fixed; top: 10px; right: 10px; z-index: 100;">
+            <!-- Ganti 'Nama User' dengan nama pengguna yang sedang masuk -->
+            <span style="color: #000; font-weight: bold;">{{Auth::user()->nama ?? ''}}</span>
+            <!-- Tambahkan tautan logout di sini -->
+            <a href="/logout" style="color: #dc3545; margin-left: 10px; text-decoration: none;">Logout</a>
+        </div>
 
             <!-- Card untuk input hasil pertandingan -->
             <div class="card">
@@ -108,13 +116,6 @@
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
-            </div>
-
-            <div style="position: fixed; top: 10px; right: 10px; z-index: 100;">
-                <!-- Ganti 'Nama User' dengan nama pengguna yang sedang masuk -->
-                <span style="color: #000; font-weight: bold;">{{Auth::user()->nama ?? ''}}</span>
-                <!-- Tambahkan tautan logout di sini -->
-                <a href="/logout" style="color: #dc3545; margin-left: 10px; text-decoration: none;">Logout</a>
             </div>
         </div>
     </section>

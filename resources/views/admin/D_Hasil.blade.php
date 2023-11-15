@@ -75,12 +75,13 @@
             <h2>Admin Dashboard - Hasil Pertandingan</h2>
             <p>INI "HASIL PERTANDINGAN" admin dashboard.</p>
         </div>
-        <div style="position: fixed; top: 10px; right: 10px; z-index: 100;">
-            <!-- Ganti 'Nama User' dengan nama pengguna yang sedang masuk -->
-            <span style="color: #000; font-weight: bold;">{{Auth::user()->nama ?? ''}}</span>
-            <!-- Tambahkan tautan logout di sini -->
-            <a href="/logout" style="color: #dc3545; margin-left: 10px; text-decoration: none;">Logout</a>
-        </div>
+       <!-- user admin tampilan -->
+            <div style="position: fixed; top: 10px; right: 10px; z-index: 100;">
+                <!-- Ganti 'Nama User' dengan nama pengguna yang sedang masuk -->
+                <span style="color: #000; font-weight: bold;">{{Auth::user()->nama ?? ''}}</span>
+                <!-- Tambahkan tautan logout di sini -->
+                <a href="/logout" style="color: #dc3545; margin-left: 10px; text-decoration: none;">Logout</a>
+            </div>
     </section>
 
     <!-- Table untuk CRUD hasil pertandingan -->

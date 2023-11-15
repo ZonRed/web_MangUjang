@@ -75,6 +75,7 @@
         <h2>Admin Dashboard - Jadwal Pertandingan</h2>
         <p>INI "JADWAL PERTANDINGAN" admin dashboard.</p>
     </div>
+    <!-- user admin tampilan -->
     <div style="position: fixed; top: 10px; right: 10px; z-index: 100;">
         <!-- Ganti 'Nama User' dengan nama pengguna yang sedang masuk -->
         <span style="color: #000; font-weight: bold;">{{Auth::user()->nama ?? ''}}</span>

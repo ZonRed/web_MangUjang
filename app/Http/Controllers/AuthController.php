@@ -33,21 +33,21 @@ class AuthController extends Controller
         return view ('admin.login');
     }
 
-        public function checklogin(Request $request)
+    public function checklogin(Request $request)
+    {
+        if (!Auth::attempt([
+            'email' => $request->email,
+            'password' => $request->password
+        ]))
         {
-            if (!Auth::attempt([
-                'email' => $request->email,
-                'password' => $request->password
-            ]))
-            {
-                    return redirect('/login');
-            }
-            else
-            {
-                    return redirect('/Dashboard');
-            }
-
+            return response()->json(['error' => 'Invalid email or password'], 401);
         }
+        else
+        {
+            return response()->json(['success' => 'Login successful']);
+        }
+    }
+    
 
     public function logout()
         {
