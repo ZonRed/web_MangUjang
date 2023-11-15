@@ -43,6 +43,10 @@ Route::get('/D_Jadwal', function () {
     return view('admin.D_Jadwal');
 })->middleware('auth');
 
+Route::get('/D_InputJadwal', function () {
+    return view('admin.D_InputJadwal');
+})->middleware('auth');
+
 Route::get('/D_Hasil', function () {
     return view('admin.D_Hasil');
 })->middleware('auth');
@@ -53,6 +57,10 @@ Route::get('/D_InputHasil', function () {
 
 Route::get('/D_Statistik', function () {
     return view('admin.D_Statistik');
+})->middleware('auth');
+
+Route::get('/D_InputStatistik', function () {
+    return view('admin.D_InputStatistik');
 })->middleware('auth');
 
 Route::get('/Dashboard', function () {

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard - Input Hasil Pertandingan</title>
+    <title>Admin Dashboard - Input Statistik Pemain</title>
 
     <!-- Tambahkan tautan ke file CSS Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -73,10 +73,10 @@
             </li>
         </ul>
     </div> 
-    <!-- Content area for Input Hasil Pertandingan -->
-    <section id="input-hasil-pertandingan" class="py-5">
+    <!-- Content area for Input Statistik Pemain -->
+    <section id="input-statistik-pemain" class="py-5">
         <div class="container-fluid content-area">
-            <h2>Admin Dashboard - Input Hasil Pertandingan</h2>
+            <h2>Admin Dashboard - Input Statistik Pemain</h2>
     
         <!-- user admin tampilan -->
         <div style="position: fixed; top: 10px; right: 10px; z-index: 100;">
@@ -86,36 +86,56 @@
             <a href="/logout" style="color: #dc3545; margin-left: 10px; text-decoration: none;">Logout</a>
         </div>
 
-            <!-- Card untuk input hasil pertandingan -->
+            <!-- Card untuk input statistik pemain -->
             <div class="card">
                 <div class="card-body">
                     <form>
-                        <!-- Input untuk Tanggal -->
+                        <!-- Input untuk No Punggung -->
                         <div class="mb-3">
-                            <label for="tanggal" class="form-label">Tanggal</label>
-                            <input type="date" class="form-control" id="tanggal" name="tanggal" required>
+                            <label for="no_punggung" class="form-label">No Punggung</label>
+                            <input type="text" class="form-control" id="no_punggung" name="no_punggung" required>
                         </div>
 
-                        <!-- Input untuk Lawan -->
+                        <!-- Input untuk Posisi -->
                         <div class="mb-3">
-                            <label for="lawan" class="form-label">Lawan</label>
-                            <input type="text" class="form-control" id="lawan" name="lawan" required>
+                            <label for="posisi" class="form-label">Posisi</label>
+                            <input type="text" class="form-control" id="posisi" name="posisi" required>
                         </div>
 
-                        <!-- Input untuk Skor -->
+                        <!-- Input untuk Nama Pemain -->
                         <div class="mb-3">
-                            <label for="skor" class="form-label">Skor</label>
-                            <input type="text" class="form-control" id="skor" name="skor" required>
+                            <label for="nama_pemain" class="form-label">Nama Pemain</label>
+                            <input type="text" class="form-control" id="nama_pemain" name="nama_pemain" required>
                         </div>
 
-                        <!-- Input untuk Hasil -->
+                        <!-- Input untuk Penampilan -->
                         <div class="mb-3">
-                            <label for="hasil" class="form-label">Hasil</label>
-                            <select class="form-select" id="hasil" name="hasil" required>
-                                <option value="Menang">Menang</option>
-                                <option value="Seri">Seri</option>
-                                <option value="Kalah">Kalah</option>
-                            </select>
+                            <label for="penampilan" class="form-label">Penampilan</label>
+                            <input type="text" class="form-control" id="penampilan" name="penampilan" required>
+                        </div>
+
+                        <!-- Input untuk Gol -->
+                        <div class="mb-3">
+                            <label for="gol" class="form-label">Gol</label>
+                            <input type="text" class="form-control" id="gol" name="gol" required>
+                        </div>
+
+                        <!-- Input untuk Assists -->
+                        <div class="mb-3">
+                            <label for="assists" class="form-label">Assists</label>
+                            <input type="text" class="form-control" id="assists" name="assists" required>
+                        </div>
+
+                        <!-- Input untuk Kartu Kuning -->
+                        <div class="mb-3">
+                            <label for="kartu_kuning" class="form-label">Kartu Kuning</label>
+                            <input type="text" class="form-control" id="kartu_kuning" name="kartu_kuning" required>
+                        </div>
+
+                        <!-- Input untuk Kartu Merah -->
+                        <div class="mb-3">
+                            <label for="kartu_merah" class="form-label">Kartu Merah</label>
+                            <input type="text" class="form-control" id="kartu_merah" name="kartu_merah" required>
                         </div>
 
                         <!-- Tombol Submit -->

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard - Statistik Pemain</title>
+    <title>Admin Dashboard - Isi Jadwal Pertandingan</title>
 
     <!-- Tambahkan tautan ke file CSS Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -41,8 +41,8 @@
 </head>
 
 <body>
-      <!-- Sidebar -->
-      <div class="sidebar">
+    <!-- Sidebar -->
+    <div class="sidebar">
         <ul class="nav flex-column">
             <li class="nav-item">
                 <a class="nav-link" href="Dashboard">Dashboard</a>
@@ -73,13 +73,11 @@
             </li>
         </ul>
     </div> 
-
-    <!-- Content area for Statistik Pemain -->
-    <section id="statistik-pemain" class="py-5" style="margin-top: 80px;">
+    <!-- Content area for Isi Jadwal Pertandingan -->
+    <section id="isi-jadwal-pertandingan" class="py-5">
         <div class="container-fluid content-area">
-            <h2>Admin Dashboard - Statistik Pemain</h2>
-            <p>INI "STATISTIK PEMAIN" admin dashboard.</p>
-        </div>
+            <h2>Admin Dashboard - Input Jadwal Pertandingan</h2>
+    
         <!-- user admin tampilan -->
         <div style="position: fixed; top: 10px; right: 10px; z-index: 100;">
             <!-- Ganti 'Nama User' dengan nama pengguna yang sedang masuk -->
@@ -87,45 +85,42 @@
             <!-- Tambahkan tautan logout di sini -->
             <a href="/logout" style="color: #dc3545; margin-left: 10px; text-decoration: none;">Logout</a>
         </div>
+
+            <!-- Card untuk isi jadwal pertandingan -->
+            <div class="card">
+                <div class="card-body">
+                    <form>
+                        <!-- Input untuk Tanggal -->
+                        <div class="mb-3">
+                            <label for="tanggal" class="form-label">Tanggal</label>
+                            <input type="date" class="form-control" id="tanggal" name="tanggal" required>
+                        </div>
+
+                        <!-- Input untuk Lawan -->
+                        <div class="mb-3">
+                            <label for="lawan" class="form-label">Lawan</label>
+                            <input type="text" class="form-control" id="lawan" name="lawan" required>
+                        </div>
+
+                        <!-- Input untuk Tempat -->
+                        <div class="mb-3">
+                            <label for="tempat" class="form-label">Tempat</label>
+                            <input type="text" class="form-control" id="tempat" name="tempat" required>
+                        </div>
+
+                        <!-- Input untuk Waktu -->
+                        <div class="mb-3">
+                            <label for="waktu" class="form-label">Waktu</label>
+                            <input type="time" class="form-control" id="waktu" name="waktu" required>
+                        </div>
+
+                        <!-- Tombol Submit -->
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </section>
-
-    <!-- Table untuk Statistik Pemain -->
-    <table class="table table-bordered" style="margin-left: 220px; padding: 20px;">
-        <thead>
-            <tr>
-                <th>No Punggung</th>
-                <th>Posisi</th>
-                <th>Nama Pemain</th>
-                <th>Penampilan</th>
-                <th>Gol</th>
-                <th>Assists</th>
-                <th>Kartu Kuning</th>
-                <th>Kartu Merah</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>5</td>
-                <td>DF</td>
-                <td>H. Maguire</td>
-                <td>9</td>
-                <td>0</td>
-                <td>1</td>
-                <td>0</td>
-                <td>0</td>
-                <td>
-                <button class="btn btn-primary">Edit</button>
-                <button class="btn btn-danger">Delete</button>
-                </td>
-            </tr>
-                  
-            <!-- Tambahkan data statistik pemain di sini -->
-        </tbody>
-    </table>
-
-
-
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
