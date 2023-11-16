@@ -9,6 +9,8 @@
     <!-- Tambahkan tautan ke file CSS Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
+     <!-- Tambahkan tautan ke file JQUERY ajax -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <style>
         .sidebar {
@@ -75,6 +77,8 @@
         </ul>
     </div> 
 
+
+    
     <!-- Content area for Hasil Pertandingan -->
     <section id="hasil-pertandingan" class="py-5" style="margin-top: 80px;">
         <div class="container-fluid content-area">
@@ -92,6 +96,17 @@
 
     <!-- Table untuk CRUD hasil pertandingan -->
     <table class="table table-bordered" style="margin-left: 220px; padding: 20px;">
+        <!-- Search bar -->
+        <div class="container-fluid content-area">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Cari pertandingan..." id="searchInput" >
+                        <button class="btn btn-outline-secondary" type="button" id="searchButton">Cari</button>
+                    </div>
+                </div>
+            </div>
+
         <thead>
             <tr>
                 <th>Tanggal</th>
@@ -101,7 +116,7 @@
                 <th>Action</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="myTable">
             <tr>
                 <td>10 Oktober 2023</td>
                 <td>Bentford</td>
@@ -156,6 +171,38 @@
         </tbody>
     </table>
 
+
+
+
+<!-- SCRIPT PENCARIAN -->
+<script>
+    $(document).ready(function () {
+        var searchValue = ""; // Variable to store search input
+
+        // Function to filter table rows based on stored input value
+        function filterTable() {
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(searchValue) > -1);
+            });
+        }
+
+        // Capture input value on keyup
+        $("#searchInput").on("keyup", function () {
+            searchValue = $(this).val().toLowerCase();
+        
+         // Check if the input is empty
+         if (searchValue === "") {
+                // If empty, reset the table to its initial state
+                $("#myTable tr").show();
+            }
+        });
+
+        // Trigger the filterTable function on button click event
+        $("#searchButton").on("click", function () {
+            filterTable();
+        });
+    });
+</script>
 
 
     <!-- Bootstrap Bundle with Popper -->

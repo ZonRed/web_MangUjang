@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
 
-   <!-- Tambahkan tautan ke file CSS Bootstrap -->
+    <!-- Tambahkan tautan ke file CSS Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Tambahkan tautan ke file JQUERY ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <style>
         .sidebar {
@@ -92,6 +95,17 @@
 
     <!-- Table untuk CRUD jadwal pertandingan -->
     <table class="table table-bordered" style="margin-left: 220px; padding: 20px;" >
+         <!-- Search bar for Jadwal Pertandingan -->
+    <div class="container-fluid content-area">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Cari pertandingan..." id="searchJadwalInput">
+                    <button class="btn btn-outline-secondary" type="button" id="searchJadwalButton">Cari</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <thead>
         <tr>
             <th>Tanggal</th>
@@ -101,7 +115,7 @@
             <th>Action</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody id="jadwalBody">
         <tr>
             <td>10 Oktober 2023</td>
             <td>Bentford</td>
@@ -176,7 +190,35 @@
     </tbody>
 </table>
 
+<!-- SCRIPT PENCARIAN untuk Jadwal Pertandingan -->
+<script>
+    $(document).ready(function () {
+        var searchJadwalValue = ""; // Variable to store search input
 
+        // Function to filter table rows based on stored input value
+        function filterJadwalTable() {
+            $("#jadwalBody tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(searchJadwalValue) > -1);
+            });
+        }
+
+        // Capture input value on keyup
+        $("#searchJadwalInput").on("keyup", function () {
+            searchJadwalValue = $(this).val().toLowerCase();
+
+            // Check if the input is empty
+            if (searchJadwalValue === "") {
+                // If empty, reset the table to its initial state
+                $("#jadwalBody tr").show();
+            }
+        });
+
+        // Trigger the filterJadwalTable function on button click event
+        $("#searchJadwalButton").on("click", function () {
+            filterJadwalTable();
+        });
+    });
+</script>
 
 
     <!-- Bootstrap Bundle with Popper -->
