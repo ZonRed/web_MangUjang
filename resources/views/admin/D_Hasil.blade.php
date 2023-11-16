@@ -92,6 +92,9 @@
                 <!-- Tambahkan tautan logout di sini -->
                 <a href="/logout" style="color: #dc3545; margin-left: 10px; text-decoration: none;">Logout</a>
             </div>
+              <div style="margin-top: 20px;">
+        <a href="javascript:history.back()" class="btn btn-secondary">Kembali</a>
+    </div>
     </section>
 
     <!-- Table untuk CRUD hasil pertandingan -->
@@ -105,8 +108,12 @@
                         <button class="btn btn-outline-secondary" type="button" id="searchButton">Cari</button>
                     </div>
                 </div>
+                <div class="col-md-6">
+                    <!-- Back button -->
+                    <a href="D_InputHasil" class="btn btn-outline-primary">Input</a>
+                </div>
             </div>
-
+        </div>
         <thead>
             <tr>
                 <th>Tanggal</th>

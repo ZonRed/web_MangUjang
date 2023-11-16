@@ -104,6 +104,10 @@
                     <button class="btn btn-outline-secondary" type="button" id="searchJadwalButton">Cari</button>
                 </div>
             </div>
+            <div class="col-md-6">
+                <!-- Back button -->
+                <a href="D_InputJadwal" class="btn btn-outline-primary">Input</a>
+            </div>
         </div>
     </div>
     <thead>

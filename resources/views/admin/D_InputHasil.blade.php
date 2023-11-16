@@ -120,6 +120,8 @@
 
                         <!-- Tombol Submit -->
                         <button type="submit" class="btn btn-primary">Submit</button>
+                          <!-- Back button -->
+                        <a href="D_Hasil" class="btn btn-outline-primary">View Data</a>
                     </form>
                 </div>
             </div>
