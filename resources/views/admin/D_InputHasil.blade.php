@@ -89,37 +89,41 @@
             <!-- Card untuk input hasil pertandingan -->
             <div class="card">
                 <div class="card-body">
-                    <form>
+                    <form action="/hasil/save" method="POST">
+                        @csrf
                         <!-- Input untuk Tanggal -->
                         <div class="mb-3">
                             <label for="tanggal" class="form-label">Tanggal</label>
-                            <input type="date" class="form-control" id="tanggal" name="tanggal" required>
+                            <input type="date" class="form-control" name="tanggal" required>
                         </div>
 
                         <!-- Input untuk Lawan -->
                         <div class="mb-3">
                             <label for="lawan" class="form-label">Lawan</label>
-                            <input type="text" class="form-control" id="lawan" name="lawan" required>
+                            <input type="text" class="form-control" name="lawan" required>
                         </div>
 
                         <!-- Input untuk Skor -->
                         <div class="mb-3">
                             <label for="skor" class="form-label">Skor</label>
-                            <input type="text" class="form-control" id="skor" name="skor" required>
+                            <input type="text" class="form-control" name="skor" required>
                         </div>
 
                         <!-- Input untuk Hasil -->
                         <div class="mb-3">
                             <label for="hasil" class="form-label">Hasil</label>
-                            <select class="form-select" id="hasil" name="hasil" required>
-                                <option value="Menang">Menang</option>
+                            <select class="form-select" name="hasil" required>
+                                @foreach ( $hasil as $h )
+                                <option value="{{$h->id}}">{{$h->nama_hasil}}</option>
+                                @endforeach
+                                {{-- <option value="Menang">Menang</option>
                                 <option value="Seri">Seri</option>
-                                <option value="Kalah">Kalah</option>
+                                <option value="Kalah">Kalah</option> --}}
                             </select>
                         </div>
 
                         <!-- Tombol Submit -->
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <input type="submit" value="Simpan" class="btn btn-primary">
                           <!-- Back button -->
                         <a href="D_Hasil" class="btn btn-outline-primary">View Data</a>
                     </form>

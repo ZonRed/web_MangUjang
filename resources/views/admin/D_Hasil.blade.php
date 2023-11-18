@@ -124,56 +124,19 @@
             </tr>
         </thead>
         <tbody id="myTable">
+            @foreach ($hasil as $h)
             <tr>
-                <td>10 Oktober 2023</td>
-                <td>Bentford</td>
-                <td>3-1</td>
-                <td>Menang</td>
+                <td>{{$h->tanggal}}</td>
+                <td>{{$h->lawan}}</td>
+                <td>{{$h->skor}}</td>
+                <td>{{$h->hasil}}</td>
                 <td>
                 <button class="btn btn-primary">Edit</button>
                 <button class="btn btn-danger">Delete</button>
                 </td>
             </tr>
-            <tr>
-                <td>15 Oktober 2023</td>
-                <td>Sheff United</td>
-                <td>3-2</td>
-                <td>Menang</td>
-                <td>
-                <button class="btn btn-primary">Edit</button>
-                <button class="btn btn-danger">Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td>20 Oktober 2023</td>
-                <td>Copenhagen</td>
-                <td>3-2</td>
-                <td>Menang</td>
-                <td>
-                <button class="btn btn-primary">Edit</button>
-                <button class="btn btn-danger">Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td>25 Desember 2024</td>
-                <td>Manchaster City</td>
-                <td>2-2</td>
-                <td>Seri</td>
-                <td>
-                <button class="btn btn-primary">Edit</button>
-                <button class="btn btn-danger">Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td>30 November 2025</td>
-                <td>Newcastle United</td>
-                <td>2-1</td>
-                <td>Menang</td>
-                <td>
-                <button class="btn btn-primary">Edit</button>
-                <button class="btn btn-danger">Delete</button>
-                </td>
-            </tr>
+            @endforeach
+            
             <!-- Tambahkan baris untuk pertandingan lainnya di sini -->
         </tbody>
     </table>

@@ -47,13 +47,13 @@ Route::get('/D_InputJadwal', function () {
     return view('admin.D_InputJadwal');
 })->middleware('auth');
 
-Route::get('/D_Hasil', function () {
-    return view('admin.D_Hasil');
-})->middleware('auth');
+// Route::get('/D_Hasil', function () {
+//     return view('admin.D_Hasil');
+// })->middleware('auth');
 
-Route::get('/D_InputHasil', function () {
-    return view('admin.D_InputHasil');
-})->middleware('auth');
+// Route::get('/D_InputHasil', function () {
+//     return view('admin.D_InputHasil');
+// })->middleware('auth');
 
 Route::get('/D_Statistik', function () {
     return view('admin.D_Statistik');
@@ -84,3 +84,8 @@ Route::post('/checklogin', 'App\Http\Controllers\Authcontroller@checklogin');
 
 //route logout
 Route::get('/logout', 'App\Http\Controllers\AuthController@logout');
+
+//route hasil
+Route::get('/D_Hasil', 'App\Http\Controllers\HasilController@hasil');
+Route::get('/D_InputHasil', 'App\Http\Controllers\HasilController@InputHasil');
+Route::post('/D_InputHasil/save',[HasilController::class,'save']);
