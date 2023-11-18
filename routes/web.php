@@ -27,9 +27,9 @@ Route::get('/transfer', function () {
     return view('pengguna.transfer');
 });
 
-Route::get('/hasil', function () {
-    return view('pengguna.hasil');
-});
+// Route::get('/hasil', function () {
+//     return view('pengguna.hasil');
+// });
 
 Route::get('/next', function () {
     return view('pengguna.next');
@@ -90,3 +90,10 @@ Route::get('/logout', 'App\Http\Controllers\AuthController@logout');
 Route::get('/D_Hasil', 'App\Http\Controllers\HasilController@hasil');
 Route::get('/D_InputHasil', 'App\Http\Controllers\HasilController@InputHasil');
 Route::post('/save',[HasilController::class,'save']);
+
+//route delete hasil
+Route::get('/delete/{id}', 'App\Http\Controllers\HasilController@delete')->middleware('auth');
+
+
+//route pengguna_hasil
+Route::get('/hasil', 'App\Http\Controllers\HasilController@pengguna_hasil');

@@ -16,6 +16,11 @@ class HasilController extends Controller
         $hasil = hasil::all();
         return view('admin.D_Hasil',['hasil'=>$hasil]);
     }
+    public function pengguna_hasil()
+    {
+        $hasil = hasil::all();
+        return view('pengguna.hasil',['hasil'=>$hasil]);
+    }
 
     public function InputHasil()
     {
@@ -43,4 +48,14 @@ class HasilController extends Controller
         return redirect('D_Hasil');
     }
 
+
+    public function delete($id)
+    {
+        $hasil = Hasil::find($id);
+        
+        if ($hasil) {
+            $hasil->delete();
+            return redirect('/D_Hasil');
+        }
+    }
 }

@@ -132,12 +132,10 @@
                 <td>{{$h->nama_hasil}}</td>
                 <td>
                 <button class="btn btn-primary">Edit</button>
-                <button class="btn btn-danger">Delete</button>
+                <a href="{{ url('/delete/' . $h->id) }}" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
             @endforeach
-            
-            <!-- Tambahkan baris untuk pertandingan lainnya di sini -->
         </tbody>
     </table>
 
