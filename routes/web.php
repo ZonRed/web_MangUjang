@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HasilController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -88,4 +89,4 @@ Route::get('/logout', 'App\Http\Controllers\AuthController@logout');
 //route hasil
 Route::get('/D_Hasil', 'App\Http\Controllers\HasilController@hasil');
 Route::get('/D_InputHasil', 'App\Http\Controllers\HasilController@InputHasil');
-Route::post('/D_InputHasil/save',[HasilController::class,'save']);
+Route::post('/save',[HasilController::class,'save']);

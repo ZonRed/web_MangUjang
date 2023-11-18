@@ -18,7 +18,7 @@ return new class extends Migration
             $table->date('tanggal');
             $table->string('lawan');
             $table->string('skor');
-            $table->string('hasil');
+            $table->string('nama_hasil');
             $table->timestamps();
         });
     }

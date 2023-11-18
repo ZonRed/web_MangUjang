@@ -38,7 +38,7 @@ class HasilController extends Controller
         $hasil ->tanggal=$request->tanggal;
         $hasil ->lawan=$request->lawan;
         $hasil ->skor=$request->skor;
-        $hasil ->hasil=$request->hasil;
+        $hasil ->nama_hasil=$request->nama_hasil;
         $hasil ->save();
         return redirect('D_Hasil');
     }

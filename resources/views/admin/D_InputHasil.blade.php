@@ -89,7 +89,7 @@
             <!-- Card untuk input hasil pertandingan -->
             <div class="card">
                 <div class="card-body">
-                    <form action="/hasil/save" method="POST">
+                    <form action="{{ url('save') }}" method="POST">
                         @csrf
                         <!-- Input untuk Tanggal -->
                         <div class="mb-3">
@@ -112,13 +112,10 @@
                         <!-- Input untuk Hasil -->
                         <div class="mb-3">
                             <label for="hasil" class="form-label">Hasil</label>
-                            <select class="form-select" name="hasil" required>
-                                @foreach ( $hasil as $h )
-                                <option value="{{$h->id}}">{{$h->nama_hasil}}</option>
-                                @endforeach
-                                {{-- <option value="Menang">Menang</option>
+                            <select class="form-select" name="nama_hasil" required>
+                                <option value="Menang">Menang</option>
                                 <option value="Seri">Seri</option>
-                                <option value="Kalah">Kalah</option> --}}
+                                <option value="Kalah">Kalah</option>
                             </select>
                         </div>
 

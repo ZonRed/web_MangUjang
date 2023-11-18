@@ -129,7 +129,7 @@
                 <td>{{$h->tanggal}}</td>
                 <td>{{$h->lawan}}</td>
                 <td>{{$h->skor}}</td>
-                <td>{{$h->hasil}}</td>
+                <td>{{$h->nama_hasil}}</td>
                 <td>
                 <button class="btn btn-primary">Edit</button>
                 <button class="btn btn-danger">Delete</button>
