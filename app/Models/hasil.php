@@ -13,8 +13,8 @@ class hasil extends Model
     protected $fillable = [
         'tanggal',
         'lawan',
-        'score',
-        'hasil'
+        'skor',
+        'nama_hasil'
     ];
 
 }
