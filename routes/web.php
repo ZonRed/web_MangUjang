@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HasilController;
+use App\Http\Controllers\JadwalController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,22 +32,22 @@ Route::get('/transfer', function () {
 //     return view('pengguna.hasil');
 // });
 
-Route::get('/next', function () {
-    return view('pengguna.next');
-});
+// Route::get('/next', function () {
+//     return view('pengguna.next');
+// });
 
 Route::get('/statistik', function () {
     return view('pengguna.statistik');
 });
 
 //admin
-Route::get('/D_Jadwal', function () {
-    return view('admin.D_Jadwal');
-})->middleware('auth');
+// Route::get('/D_Jadwal', function () {
+//     return view('admin.D_Jadwal');
+// })->middleware('auth');
 
-Route::get('/D_InputJadwal', function () {
-    return view('admin.D_InputJadwal');
-})->middleware('auth');
+// Route::get('/D_InputJadwal', function () {
+//     return view('admin.D_InputJadwal');
+// })->middleware('auth');
 
 // Route::get('/D_Hasil', function () {
 //     return view('admin.D_Hasil');
@@ -94,6 +95,17 @@ Route::post('/save',[HasilController::class,'save']);
 //route delete hasil
 Route::get('/delete/{id}', 'App\Http\Controllers\HasilController@delete')->middleware('auth');
 
-
 //route pengguna_hasil
 Route::get('/hasil', 'App\Http\Controllers\HasilController@pengguna_hasil');
+
+//route hasil
+Route::get('/D_Jadwal', 'App\Http\Controllers\JadwalController@Jadwal');
+Route::get('/D_InputJadwal', 'App\Http\Controllers\JadwalController@InputJadwal');
+Route::post('/SaveJadwal',[JadwalController::class,'SaveJadwal']);
+
+//route delete jadwal
+Route::get('/delete/{id}', 'App\Http\Controllers\JadwalController@delete')->middleware('auth');
+
+//route pengguna_hasil
+Route::get('/next', 'App\Http\Controllers\JadwalController@pengguna_jadwal');
+

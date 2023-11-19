@@ -70,42 +70,14 @@
                                     </tr>
                                 </thead>
                                 <tbody id="myTable">
+                                    @foreach ($Jadwal as $j)
                                     <tr>
-                                        <td>10 Oktober 2023</td>
-                                        <td>Bentford</td>
-                                        <td>Old Ttrafford</td>
-                                        <td>21.00 WIB</td>
-                                    </tr>
-                                    <tr>
-                                        <td>15 Oktober 2023</td>
-                                        <td>Sheff United</td>
-                                        <td>Bramall Lane</td>
-                                        <td>02.00 WIB</td>
-                                    </tr>
-                                    <tr>
-                                        <td>20 Oktober 2023</td>
-                                        <td>Copenhagen</td>
-                                        <td>Stadion Parken</td>
-                                        <td>02:30 WIB</td>
-                                    </tr>
-                                    <tr>
-                                        <td>25 Oktober 2023</td>
-                                        <td>Manchaster City</td>
-                                        <td>Stadium Etihad</td>
-                                        <td>22.30 WIB</td>
-                                    </tr>
-                                      <tr>
-                                        <td>25 Oktober 2024</td>
-                                        <td>Manchaster City</td>
-                                        <td>Stadium Etihad</td>
-                                        <td>22.30 WIB</td>
-                                    </tr>
-                                    <tr>
-                                        <td>30 Oktober 2025</td>
-                                        <td>Newcastle United</td>
-                                        <td>St James' Park</td>
-                                        <td>03.15 WIB</td>
-                                    </tr>
+                                        <td>{{$j->tanggal}}</td>
+                                        <td>{{$j->lawan}}</td>
+                                        <td>{{$j->tempat}}</td>
+                                        <td>{{$j->waktu}}</td>
+                                    <td>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

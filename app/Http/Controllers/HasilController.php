@@ -51,11 +51,7 @@ class HasilController extends Controller
 
     public function delete($id)
     {
-        $hasil = Hasil::find($id);
-        
-        if ($hasil) {
-            $hasil->delete();
-            return redirect('/D_Hasil');
-        }
+        hasil::destroy($id);
+        return redirect('D_Jadwal');
     }
 }

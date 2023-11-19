@@ -89,33 +89,34 @@
             <!-- Card untuk isi jadwal pertandingan -->
             <div class="card">
                 <div class="card-body">
-                    <form>
+                    <form action="{{ url('SaveJadwal') }}" method="POST">
+                        @csrf
                         <!-- Input untuk Tanggal -->
                         <div class="mb-3">
                             <label for="tanggal" class="form-label">Tanggal</label>
-                            <input type="date" class="form-control" id="tanggal" name="tanggal" required>
+                            <input type="date" class="form-control" name="tanggal" required>
                         </div>
 
                         <!-- Input untuk Lawan -->
                         <div class="mb-3">
                             <label for="lawan" class="form-label">Lawan</label>
-                            <input type="text" class="form-control" id="lawan" name="lawan" required>
+                            <input type="text" class="form-control" name="lawan" required>
                         </div>
 
                         <!-- Input untuk Tempat -->
                         <div class="mb-3">
                             <label for="tempat" class="form-label">Tempat</label>
-                            <input type="text" class="form-control" id="tempat" name="tempat" required>
+                            <input type="text" class="form-control" name="tempat" required>
                         </div>
 
                         <!-- Input untuk Waktu -->
                         <div class="mb-3">
                             <label for="waktu" class="form-label">Waktu</label>
-                            <input type="time" class="form-control" id="waktu" name="waktu" required>
+                            <input type="time" class="form-control" name="waktu" required>
                         </div>
 
                         <!-- Tombol Submit -->
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <input type="submit" value="Simpan" class="btn btn-primary">
                          <!-- Back button -->
                          <a href="D_Jadwal" class="btn btn-outline-primary">View Data</a>
                     </form>

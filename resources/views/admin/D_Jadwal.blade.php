@@ -120,77 +120,18 @@
         </tr>
     </thead>
     <tbody id="jadwalBody">
+        @foreach ($Jadwal as $j)
         <tr>
-            <td>10 Oktober 2023</td>
-            <td>Bentford</td>
-            <td>Old Ttrafford</td>
-            <td>21.00 WIB</td>
+            <td>{{$j->tanggal}}</td>
+                <td>{{$j->lawan}}</td>
+                <td>{{$j->tempat}}</td>
+                <td>{{$j->waktu}}</td>
             <td>
                 <button class="btn btn-primary">Edit</button>
-                <button class="btn btn-danger">Delete</button>
+                <a href="{{ url('/delete/' . $j->id) }}" class="btn btn-danger">Delete</a>
             </td>
         </tr>
-        <!-- Tambahkan baris tambahan di sini -->
-        <tr>
-            <td>Tanggal</td>
-            <td>Lawan</td>
-            <td>Tempat</td>
-            <td>Waktu</td>
-            <td>
-                <button class="btn btn-primary">Edit</button>
-                <button class="btn btn-danger">Delete</button>
-            </td>
-        </tr>
-        <tr>
-            <td>Tanggal</td>
-            <td>Lawan</td>
-            <td>Tempat</td>
-            <td>Waktu</td>
-            <td>
-                <button class="btn btn-primary">Edit</button>
-                <button class="btn btn-danger">Delete</button>
-            </td>
-        </tr>
-        <tr>
-            <td>Tanggal</td>
-            <td>Lawan</td>
-            <td>Tempat</td>
-            <td>Waktu</td>
-            <td>
-                <button class="btn btn-primary">Edit</button>
-                <button class="btn btn-danger">Delete</button>
-            </td>
-        </tr>
-        <tr>
-            <td>Tanggal</td>
-            <td>Lawan</td>
-            <td>Tempat</td>
-            <td>Waktu</td>
-            <td>
-                <button class="btn btn-primary">Edit</button>
-                <button class="btn btn-danger">Delete</button>
-            </td>
-        </tr>
-        <tr>
-            <td>Tanggal</td>
-            <td>Lawan</td>
-            <td>Tempat</td>
-            <td>Waktu</td>
-            <td>
-                <button class="btn btn-primary">Edit</button>
-                <button class="btn btn-danger">Delete</button>
-            </td>
-        </tr>
-        <tr>
-            <td>Tanggal</td>
-            <td>Lawan</td>
-            <td>Tempat</td>
-            <td>Waktu</td>
-            <td>
-                <button class="btn btn-primary">Edit</button>
-                <button class="btn btn-danger">Delete</button>
-            </td>
-        </tr>
+        @endforeach
     </tbody>
 </table>
 
