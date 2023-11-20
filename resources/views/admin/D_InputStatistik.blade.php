@@ -37,6 +37,9 @@
         body {
             background-color: #f8f9fa; /* Warna latar belakang yang sesuai dengan tema */
         }
+        .card {
+            max-width: 1000px; /* Set your desired maximum width for the card */
+        }
     </style>
 </head>
 

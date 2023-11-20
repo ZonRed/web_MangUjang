@@ -96,7 +96,7 @@
     <table class="table table-bordered" style="margin-left: 220px; padding: 20px;">
         <div class="container-fluid content-area">
             <div class="row mb-3">
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Cari pemain..." id="searchInput">
                         <button class="btn btn-outline-secondary" type="button" id="searchButton">Cari</button>

@@ -49,9 +49,9 @@ class HasilController extends Controller
     }
 
 
-    public function delete($id)
+    public function delete_hasil($id)
     {
         hasil::destroy($id);
-        return redirect('D_Jadwal');
+        return redirect('D_Hasil');
     }
 }

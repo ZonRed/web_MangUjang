@@ -93,7 +93,7 @@ Route::get('/D_InputHasil', 'App\Http\Controllers\HasilController@InputHasil');
 Route::post('/save',[HasilController::class,'save']);
 
 //route delete hasil
-Route::get('/delete/{id}', 'App\Http\Controllers\HasilController@delete')->middleware('auth');
+Route::get('/delete_hasil/{id}', 'App\Http\Controllers\HasilController@delete_hasil')->middleware('auth');
 
 //route pengguna_hasil
 Route::get('/hasil', 'App\Http\Controllers\HasilController@pengguna_hasil');
@@ -104,7 +104,7 @@ Route::get('/D_InputJadwal', 'App\Http\Controllers\JadwalController@InputJadwal'
 Route::post('/SaveJadwal',[JadwalController::class,'SaveJadwal']);
 
 //route delete jadwal
-Route::get('/delete/{id}', 'App\Http\Controllers\JadwalController@delete')->middleware('auth');
+Route::get('/delete_jadwal/{id}', 'App\Http\Controllers\JadwalController@delete_jadwal')->middleware('auth');
 
 //route pengguna_hasil
 Route::get('/next', 'App\Http\Controllers\JadwalController@pengguna_jadwal');

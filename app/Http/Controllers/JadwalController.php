@@ -50,7 +50,7 @@ class JadwalController extends Controller
         return redirect('D_Jadwal');
     }
 
-    public function delete($id)
+    public function delete_jadwal($id)
     {
         Jadwal::destroy($id);
         return redirect('D_Jadwal');

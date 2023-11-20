@@ -102,7 +102,7 @@
         <!-- Search bar -->
         <div class="container-fluid content-area">
             <div class="row mb-3">
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Cari pertandingan..." id="searchInput" >
                         <button class="btn btn-outline-secondary" type="button" id="searchButton">Cari</button>
@@ -132,7 +132,7 @@
                 <td>{{$h->nama_hasil}}</td>
                 <td>
                 <button class="btn btn-primary">Edit</button>
-                <a href="{{ url('/delete/' . $h->id) }}" class="btn btn-danger">Delete</a>
+                <a href="{{ url('/delete_hasil/' . $h->id) }}" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
             @endforeach
