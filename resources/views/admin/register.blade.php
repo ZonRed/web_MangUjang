@@ -72,39 +72,50 @@
     </footer>
 
 
-     <!-- Tambahkan AJAX filter maksimal input password -->
-    <script>
-        $(document).ready(function () {
-            $('form').submit(function (e) {
-                e.preventDefault();
-                var password = $('input[name="password"]').val();
-                if (password.length > 5) {
-                    // Menampilkan pesan kesalahan
-                    $('#password-error').text('Password maximum length is 5 characters');
-                }
-                if (password.length < 3) {
-                    // Menampilkan pesan kesalahan jika panjang kurang dari 3 karakter
-                     $('#password-error').text('Password minimum length is 3 characters');
-                } else {
-                    // Melakukan proses penyimpanan atau pengiriman data menggunakan AJAX
-                    $.ajax({
-                        type: 'POST',
-                        url: $(this).attr('action'),
-                        data: $(this).serialize(),
-                        success: function (response) {
-                            // Tindakan setelah berhasil
-                            $('#success-message').text('Registrasi berhasil!');
-                            console.log(response);
-                        },
-                        error: function (error) {
-                            // Tangani kesalahan
-                            console.log(error);
-                        }
-                    });
-                }
-            });
+   <!-- Tambahkan AJAX filter maksimal input password -->
+<script>
+    $(document).ready(function () {
+        $('form').submit(function (e) {
+            e.preventDefault();
+            var password = $('input[name="password"]').val();
+
+            // Membersihkan pesan sebelum mengirimkan AJAX
+            $('#password-error').text('');
+            $('#success-message').text('');
+
+            if (password.length > 5) {
+                // Menampilkan pesan kesalahan
+                $('#password-error').text('Password maximum length is 5 characters');
+            } else if (password.length < 3) {
+                // Menampilkan pesan kesalahan jika panjang kurang dari 3 karakter
+                $('#password-error').text('Password minimum length is 3 characters');
+            } else {
+                // Melakukan proses penyimpanan atau pengiriman data menggunakan AJAX
+                $.ajax({
+                    type: 'POST',
+                    url: $(this).attr('action'),
+                    data: $(this).serialize(),
+                    success: function (response) {
+                        // Tindakan setelah berhasil
+                        $('#success-message').text('Registrasi berhasil!');
+                        console.log(response);
+
+                        // Membersihkan pesan setelah selesai
+                        $('#password-error').text('');
+                    },
+                    error: function (error) {
+                        // Tangani kesalahan
+                        console.log(error);
+
+                        // Membersihkan pesan setelah selesai
+                        $('#success-message').text('');
+                    }
+                });
+            }
         });
-    </script>
+    });
+</script>
+
 
 
     <!-- Tambahkan tautan ke file JavaScript Bootstrap -->

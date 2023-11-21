@@ -59,33 +59,37 @@
         <p>&copy; 2023 Portal Berita Mang Ujang</p>
     </footer>
 
-    <!-- Tambahkan AJAX filter wrong input pass/email -->
-    <script>
-        document.getElementById('loginButton').addEventListener('click', function () {
-            var form = document.getElementById('loginForm');
-            var formData = new FormData(form);
-    
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', '/checklogin', true);
-            xhr.setRequestHeader('X-CSRF-TOKEN', '{{ csrf_token() }}');
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4) {
-                    if (xhr.status === 200) {
-                        var response = JSON.parse(xhr.responseText);
-    
-                        if (response.success) {
-                            // Login successful, redirect to the Dashboard
-                            window.location.href = '/Dashboard';
-                        }
-                    } else if (xhr.status === 401) {
-                        // Invalid email or password, display error message
-                        document.getElementById('errorMessage').innerText = JSON.parse(xhr.responseText).error;
+<!-- Tambahkan AJAX filter wrong input pass/email -->
+<script>
+    document.getElementById('loginButton').addEventListener('click', function () {
+        // Membersihkan pesan kesalahan sebelum mengirimkan permintaan login
+        document.getElementById('errorMessage').innerText = '';
+
+        var form = document.getElementById('loginForm');
+        var formData = new FormData(form);
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/checklogin', true);
+        xhr.setRequestHeader('X-CSRF-TOKEN', '{{ csrf_token() }}');
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+
+                    if (response.success) {
+                        // Login successful, redirect to the Dashboard
+                        window.location.href = '/Dashboard';
                     }
+                } else if (xhr.status === 401) {
+                    // Invalid email or password, display error message
+                    document.getElementById('errorMessage').innerText = JSON.parse(xhr.responseText).error;
                 }
-            };
-            xhr.send(formData);
-        });
-    </script>
+            }
+        };
+        xhr.send(formData);
+    });
+</script>
+
     
 
 
