@@ -13,12 +13,12 @@ class HasilController extends Controller
 {
     public function hasil()
     {
-        $hasil = hasil::all();
+        $hasil = hasil::paginate(5); // Paginate with 5 items per page
         return view('admin.D_Hasil',['hasil'=>$hasil]);
     }
     public function pengguna_hasil()
     {
-        $hasil = hasil::all();
+        $hasil = hasil::paginate(5); // Paginate with 5 items per page
         return view('pengguna.hasil',['hasil'=>$hasil]);
     }
 

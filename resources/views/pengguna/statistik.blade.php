@@ -79,338 +79,62 @@
                                     </tr>
                                 </thead>
                                 <tbody id="myTable">
+                                    @foreach ($Statistik as $s)
                                     <tr>
-                                        <td>5</td>
-                                        <td>DF</td>
-                                        <td>H. Maguire</td>
-                                        <td>9</td>
-                                        <td>0</td>
-                                        <td>1</td>
-                                        <td>0</td>
-                                        <td>0</td>
+                                        <td>{{$s->punggung}}</td>
+                                            <td>{{$s->posisi}}</td>
+                                            <td>{{$s->nama_pemain}}</td>
+                                            <td>{{$s->penampilan}}</td>
+                                            <td>{{$s->gol}}</td>
+                                            <td>{{$s->assists}}</td>
+                                            <td>{{$s->kartu_kuning}}</td>
+                                            <td>{{$s->kartu_merah}}</td>
+                                        <td>
                                     </tr>
-                                    <tr>
-                                        <td>40</td>
-                                        <td>GK</td>
-                                        <td>R. Vítek</td>
-                                        <td>1</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>19</td>
-                                        <td>DF</td>
-                                        <td>R. Varane</td>
-                                        <td>8</td>
-                                        <td>1</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>20</td>
-                                        <td>DF</td>
-                                        <td>Diogo Dalot</td>
-                                        <td>11</td>
-                                        <td>1</td>
-                                        <td>0</td>
-                                        <td>2</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>9</td>
-                                        <td>CF</td>
-                                        <td>A. Martial</td>
-                                        <td>11</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>8</td>
-                                        <td>MF</td>
-                                        <td>Bruno Fernandes</td>
-                                        <td>11</td>
-                                        <td>3</td>
-                                        <td>2</td>
-                                        <td>4</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>9</td>
-                                        <td>CF</td>
-                                        <td>Anthony Martial</td>
-                                        <td>11</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10</td>
-                                        <td>CF</td>
-                                        <td>Marcus Rashford</td>
-                                        <td>10</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>34</td>
-                                        <td>MF</td>
-                                        <td>Donny van de Beek</td>
-                                        <td>4</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>18</td>
-                                        <td>MF</td>
-                                        <td>Casemiro</td>
-                                        <td>8</td>
-                                        <td>1</td>
-                                        <td>0</td>
-                                        <td>1</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>28</td>
-                                        <td>MF</td>
-                                        <td>F. Pellistri</td>
-                                        <td>10</td>
-                                        <td>0</td>
-                                        <td>1</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>35</td>
-                                        <td>DF</td>
-                                        <td>J. Evans</td>
-                                        <td>8</td>
-                                        <td>0</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>23</td>
-                                        <td>DF</td>
-                                        <td>L. Shaw</td>
-                                        <td>2</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>1</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>22</td>
-                                        <td>GK</td>
-                                        <td>T. Heaton</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>24</td>
-                                        <td>GK</td>
-                                        <td>A. Onana</td>
-                                        <td>11</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>3</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>7</td>
-                                        <td>MF</td>
-                                        <td>M. Mount</td>
-                                        <td>7</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>1</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>39</td>
-                                        <td>MF</td>
-                                        <td>S. McTominay</td>
-                                        <td>10</td>
-                                        <td>3</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>DF</td>
-                                        <td>V. Lindelöf</td>
-                                        <td>10</td>
-                                        <td>0</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>46</td>
-                                        <td>MF</td>
-                                        <td>H. Mejbri</td>
-                                        <td>8</td>
-                                        <td>1</td>
-                                        <td>0</td>
-                                        <td>1</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>14</td>
-                                        <td>MF</td>
-                                        <td>C. Eriksen</td>
-                                        <td>11</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>47</td>
-                                        <td>CF</td>
-                                        <td>S. Shoretire</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>6</td>
-                                        <td>DF</td>
-                                        <td>Lisandro Martínez</td>
-                                        <td>5</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>2</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>15</td>
-                                        <td>DF</td>
-                                        <td>Sergio Reguilón</td>
-                                        <td>5</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>1</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>12</td>
-                                        <td>DF</td>
-                                        <td>T. Malacia</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>37</td>
-                                        <td>MF</td>
-                                        <td>K. Mainoo</td>
-                                        <td>2</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>25</td>
-                                        <td>CF</td>
-                                        <td>J. Sancho</td>
-                                        <td>3</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>44</td>
-                                        <td>MF</td>
-                                        <td>D. Gore</td>
-                                        <td>4</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>11</td>
-                                        <td>CF</td>
-                                        <td>R. Højlund</td>
-                                        <td>8</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>16</td>
-                                        <td>CF</td>
-                                        <td>A. Diallo</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>29</td>
-                                        <td>DF</td>
-                                        <td>A. Wan-Bissaka</td>
-                                        <td>6</td>
-                                        <td>0</td>
-                                        <td>1</td>
-                                        <td>2</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>17</td>
-                                        <td>CF</td>
-                                        <td>A. Garnacho</td>
-                                        <td>11</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>1</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>MF</td>
-                                        <td>O. Forson</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>21</td>
-                                        <td>CF</td>
-                                        <td>Antony</td>
-                                        <td>8</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>2</td>
-                                        <td>0</td>
-                                    </tr>
+                                     @endforeach
                                     </tbody>
                             </table>
+                        </div>
+                          <!-- Pagination Links -->
+                        <div class="d-flex justify-content-center mt-3">
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination pagination-sm">
+
+                                    {{-- Previous Page Link --}}
+                                    @if ($Statistik->onFirstPage())
+                                        <li class="page-item disabled">
+                                            <span class="page-link">&laquo;</span>
+                                        </li>
+                                    @else
+                                        <li class="page-item">
+                                            <a class="page-link" href="{{ $Statistik->previousPageUrl() }}" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                    @endif
+
+                                    {{-- Pagination Elements --}}
+                                    @foreach ($Statistik->getUrlRange(1, $Statistik->lastPage()) as $page => $url)
+                                        <li class="page-item {{ $page == $Statistik->currentPage() ? 'active' : '' }}">
+                                            <a class="page-link" href="{{ $url }}">{{ $page }}</a>
+                                        </li>
+                                    @endforeach
+
+                                    {{-- Next Page Link --}}
+                                    @if ($Statistik->hasMorePages())
+                                        <li class="page-item">
+                                            <a class="page-link" href="{{ $Statistik->nextPageUrl() }}" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                    @else
+                                        <li class="page-item disabled">
+                                            <span class="page-link">&raquo;</span>
+                                        </li>
+                                    @endif
+
+                                </ul>
+                            </nav>
                         </div>
 
                            <!-- Tombol Kembali ke Halaman Utama -->

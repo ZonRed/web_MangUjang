@@ -13,13 +13,13 @@ class JadwalController extends Controller
 {
     public function Jadwal()
     {
-        $Jadwal = Jadwal::all();
+        $Jadwal = Jadwal::paginate(5); // Paginate with 5 items per page
         return view('admin.D_Jadwal',['Jadwal'=>$Jadwal]);
     }
 
     public function pengguna_jadwal()
     {
-        $Jadwal = Jadwal::all();
+        $Jadwal = Jadwal::paginate(5); // Paginate with 5 items per page
         return view('pengguna.next',['Jadwal'=>$Jadwal]);
     }
 

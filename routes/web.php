@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HasilController;
 use App\Http\Controllers\JadwalController;
+use App\Http\Controllers\StatistikController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,9 +37,9 @@ Route::get('/transfer', function () {
 //     return view('pengguna.next');
 // });
 
-Route::get('/statistik', function () {
-    return view('pengguna.statistik');
-});
+// Route::get('/statistik', function () {
+//     return view('pengguna.statistik');
+// });
 
 //admin
 // Route::get('/D_Jadwal', function () {
@@ -57,23 +58,17 @@ Route::get('/statistik', function () {
 //     return view('admin.D_InputHasil');
 // })->middleware('auth');
 
-Route::get('/D_Statistik', function () {
-    return view('admin.D_Statistik');
-})->middleware('auth');
+// Route::get('/D_Statistik', function () {
+//     return view('admin.D_Statistik');
+// })->middleware('auth');
 
-Route::get('/D_InputStatistik', function () {
-    return view('admin.D_InputStatistik');
-})->middleware('auth');
+// Route::get('/D_InputStatistik', function () {
+//     return view('admin.D_InputStatistik');
+// })->middleware('auth');
 
 Route::get('/Dashboard', function () {
     return view('admin.Dashboard');
 })->middleware('auth');
-
-Route::get('/D_User', function () {
-    return view('admin.D_User');
-})->middleware('auth');
-
-
 
 
 //route register
@@ -98,7 +93,7 @@ Route::get('/delete_hasil/{id}', 'App\Http\Controllers\HasilController@delete_ha
 //route pengguna_hasil
 Route::get('/hasil', 'App\Http\Controllers\HasilController@pengguna_hasil');
 
-//route hasil
+//route jadwal
 Route::get('/D_Jadwal', 'App\Http\Controllers\JadwalController@Jadwal');
 Route::get('/D_InputJadwal', 'App\Http\Controllers\JadwalController@InputJadwal');
 Route::post('/SaveJadwal',[JadwalController::class,'SaveJadwal']);
@@ -108,4 +103,15 @@ Route::get('/delete_jadwal/{id}', 'App\Http\Controllers\JadwalController@delete_
 
 //route pengguna_hasil
 Route::get('/next', 'App\Http\Controllers\JadwalController@pengguna_jadwal');
+
+//route statistik
+Route::get('/D_Statistik', 'App\Http\Controllers\StatistikController@Statistik');
+Route::get('/D_InputStatistik', 'App\Http\Controllers\StatistikController@InputStatistik');
+Route::post('/SaveStatistik',[StatistikController::class,'SaveStatistik']);
+
+//route delete statistik
+Route::get('/delete_statistik/{id}', 'App\Http\Controllers\JadwalController@delete_statistik')->middleware('auth');
+
+//route pengguna_statistik
+Route::get('/statistik', 'App\Http\Controllers\StatistikController@pengguna_statistik');
 

@@ -40,6 +40,7 @@
         body {
             background-color: #f8f9fa; /* Warna latar belakang yang sesuai dengan tema */
         }
+        
     </style>
 </head>
 
@@ -122,66 +123,68 @@
             </tr>
         </thead>
         <tbody id="myTable">
+            @foreach ($Statistik as $s)
             <tr>
-                <td>5</td>
-                <td>DF</td>
-                <td>H. Maguire</td>
-                <td>9</td>
-                <td>0</td>
-                <td>1</td>
-                <td>0</td>
-                <td>0</td>
+                <td>{{$s->punggung}}</td>
+                    <td>{{$s->posisi}}</td>
+                    <td>{{$s->nama_pemain}}</td>
+                    <td>{{$s->penampilan}}</td>
+                    <td>{{$s->gol}}</td>
+                    <td>{{$s->assists}}</td>
+                    <td>{{$s->kartu_kuning}}</td>
+                    <td>{{$s->kartu_merah}}</td>
                 <td>
-                <button class="btn btn-primary">Edit</button>
-                <button class="btn btn-danger">Delete</button>
+                    <button class="btn btn-primary">Edit</button>
+                    <a href="{{ url('/delete_statistik/' . $s->id) }}" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
-            <tr>
-                <td>11</td>
-                <td>ST</td>
-                <td>R. Holjoud</td>
-                <td>9</td>
-                <td>0</td>
-                <td>1</td>
-                <td>0</td>
-                <td>0</td>
-                <td>
-                <button class="btn btn-primary">Edit</button>
-                <button class="btn btn-danger">Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td>CMF/AMF</td>
-                <td>B. Fernandes</td>
-                <td>9</td>
-                <td>0</td>
-                <td>1</td>
-                <td>0</td>
-                <td>0</td>
-                <td>
-                <button class="btn btn-primary">Edit</button>
-                <button class="btn btn-danger">Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td>LW/RW</td>
-                <td>Rashford</td>
-                <td>9</td>
-                <td>0</td>
-                <td>1</td>
-                <td>0</td>
-                <td>0</td>
-                <td>
-                <button class="btn btn-primary">Edit</button>
-                <button class="btn btn-danger">Delete</button>
-                </td>
-            </tr>
-                  
-            <!-- Tambahkan data statistik pemain di sini -->
+            @endforeach
         </tbody>
     </table>
+    
+  <!-- Pagination Links -->
+<div class="d-flex justify-content-center mt-3">
+    <nav aria-label="Page navigation">
+        <ul class="pagination pagination-sm">
+
+            {{-- Previous Page Link --}}
+            @if ($Statistik->onFirstPage())
+                <li class="page-item disabled">
+                    <span class="page-link">&laquo;</span>
+                </li>
+            @else
+                <li class="page-item">
+                    <a class="page-link" href="{{ $Statistik->previousPageUrl() }}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+            @endif
+
+            {{-- Pagination Elements --}}
+            @foreach ($Statistik->getUrlRange(1, $Statistik->lastPage()) as $page => $url)
+                <li class="page-item {{ $page == $Statistik->currentPage() ? 'active' : '' }}">
+                    <a class="page-link" href="{{ $url }}">{{ $page }}</a>
+                </li>
+            @endforeach
+
+            {{-- Next Page Link --}}
+            @if ($Statistik->hasMorePages())
+                <li class="page-item">
+                    <a class="page-link" href="{{ $Statistik->nextPageUrl() }}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            @else
+                <li class="page-item disabled">
+                    <span class="page-link">&raquo;</span>
+                </li>
+            @endif
+
+        </ul>
+    </nav>
+</div>
+    
+    
 
 <!-- SCRIPT PENCARIAN -->
 <script>

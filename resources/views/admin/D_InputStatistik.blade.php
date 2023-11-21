@@ -92,57 +92,58 @@
             <!-- Card untuk input statistik pemain -->
             <div class="card">
                 <div class="card-body">
-                    <form>
+                    <form action="{{ url('SaveStatistik') }}" method="POST">
+                        @csrf
                         <!-- Input untuk No Punggung -->
                         <div class="mb-3">
-                            <label for="no_punggung" class="form-label">No Punggung</label>
-                            <input type="text" class="form-control" id="no_punggung" name="no_punggung" required>
+                            <label for="punggung" class="form-label">No Punggung</label>
+                            <input type="text" class="form-control" name="punggung" required>
                         </div>
 
                         <!-- Input untuk Posisi -->
                         <div class="mb-3">
                             <label for="posisi" class="form-label">Posisi</label>
-                            <input type="text" class="form-control" id="posisi" name="posisi" required>
+                            <input type="text" class="form-control" name="posisi" required>
                         </div>
 
                         <!-- Input untuk Nama Pemain -->
                         <div class="mb-3">
                             <label for="nama_pemain" class="form-label">Nama Pemain</label>
-                            <input type="text" class="form-control" id="nama_pemain" name="nama_pemain" required>
+                            <input type="text" class="form-control" name="nama_pemain" required>
                         </div>
 
                         <!-- Input untuk Penampilan -->
                         <div class="mb-3">
                             <label for="penampilan" class="form-label">Penampilan</label>
-                            <input type="text" class="form-control" id="penampilan" name="penampilan" required>
+                            <input type="text" class="form-control" name="penampilan" required>
                         </div>
 
                         <!-- Input untuk Gol -->
                         <div class="mb-3">
                             <label for="gol" class="form-label">Gol</label>
-                            <input type="text" class="form-control" id="gol" name="gol" required>
+                            <input type="text" class="form-control" name="gol" required>
                         </div>
 
                         <!-- Input untuk Assists -->
                         <div class="mb-3">
                             <label for="assists" class="form-label">Assists</label>
-                            <input type="text" class="form-control" id="assists" name="assists" required>
+                            <input type="text" class="form-control" name="assists" required>
                         </div>
 
                         <!-- Input untuk Kartu Kuning -->
                         <div class="mb-3">
                             <label for="kartu_kuning" class="form-label">Kartu Kuning</label>
-                            <input type="text" class="form-control" id="kartu_kuning" name="kartu_kuning" required>
+                            <input type="text" class="form-control" name="kartu_kuning" required>
                         </div>
 
                         <!-- Input untuk Kartu Merah -->
                         <div class="mb-3">
                             <label for="kartu_merah" class="form-label">Kartu Merah</label>
-                            <input type="text" class="form-control" id="kartu_merah" name="kartu_merah" required>
+                            <input type="text" class="form-control" name="kartu_merah" required>
                         </div>
 
                         <!-- Tombol Submit -->
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <input type="submit" value="Simpan" class="btn btn-primary">
                          <!-- Back button -->
                          <a href="D_Statistik" class="btn btn-outline-primary">View Data</a>
                     </form>

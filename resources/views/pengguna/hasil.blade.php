@@ -76,6 +76,47 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Pagination Links -->
+                    <div class="d-flex justify-content-center mt-3">
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination pagination-sm">
+
+                                {{-- Previous Page Link --}}
+                                @if ($hasil->onFirstPage())
+                                    <li class="page-item disabled">
+                                        <span class="page-link">&laquo;</span>
+                                    </li>
+                                @else
+                                    <li class="page-item">
+                                        <a class="page-link" href="{{ $hasil->previousPageUrl() }}" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                @endif
+
+                                {{-- Pagination Elements --}}
+                                @foreach ($hasil->getUrlRange(1, $hasil->lastPage()) as $page => $url)
+                                    <li class="page-item {{ $page == $hasil->currentPage() ? 'active' : '' }}">
+                                        <a class="page-link" href="{{ $url }}">{{ $page }}</a>
+                                    </li>
+                                @endforeach
+
+                                {{-- Next Page Link --}}
+                                @if ($hasil->hasMorePages())
+                                    <li class="page-item">
+                                        <a class="page-link" href="{{ $hasil->nextPageUrl() }}" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                @else
+                                    <li class="page-item disabled">
+                                        <span class="page-link">&raquo;</span>
+                                    </li>
+                                @endif
+
+                            </ul>
+                        </nav>
+                    </div>
                            <!-- Tombol Kembali ke Halaman Utama -->
                     <div class="container mt-3">
                     <div class="d-flex gap-10 justify-content-center">
