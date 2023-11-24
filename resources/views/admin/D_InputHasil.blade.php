@@ -51,6 +51,9 @@
                 <a class="nav-link" href="Dashboard">Dashboard</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="D_Laporan">View Pesan</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="D_Jadwal">Jadwal Pertandingan</a>
             </li>
             <li class="nav-item">
@@ -67,9 +70,6 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="D_InputStatistik">Input Statistik Pemain</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Transfer Pemain</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="index">Home Web</a>

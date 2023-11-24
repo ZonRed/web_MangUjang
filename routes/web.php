@@ -3,6 +3,7 @@
 use App\Http\Controllers\HasilController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\StatistikController;
+use App\Http\Controllers\LaporanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,9 +22,9 @@ use Illuminate\Support\Facades\Route;
 // });
 
 //pengguna
-Route::get('/index', function () {
-    return view('pengguna.index');
-});
+// Route::get('/index', function () {
+//     return view('pengguna.index');
+// });
 
 Route::get('/transfer', function () {
     return view('pengguna.transfer');
@@ -90,6 +91,8 @@ Route::post('/save',[HasilController::class,'save']);
 //route delete hasil
 Route::get('/delete_hasil/{id}', 'App\Http\Controllers\HasilController@delete_hasil')->middleware('auth');
 
+
+
 //route pengguna_hasil
 Route::get('/hasil', 'App\Http\Controllers\HasilController@pengguna_hasil');
 
@@ -115,3 +118,10 @@ Route::get('/delete_statistik/{id}', 'App\Http\Controllers\JadwalController@dele
 //route pengguna_statistik
 Route::get('/statistik', 'App\Http\Controllers\StatistikController@pengguna_statistik');
 
+//route laporan
+Route::get('/D_Laporan', 'App\Http\Controllers\LaporanController@Laporan');
+Route::get('/index', 'App\Http\Controllers\LaporanController@InputLaporan');
+Route::post('/SaveLaporan',[LaporanController::class,'SaveLaporan']);
+
+//route delete laporan
+Route::get('/delete_Laporan/{id}', 'App\Http\Controllers\LaporanController@delete_Laporan')->middleware('auth');

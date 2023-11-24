@@ -137,6 +137,39 @@
     </div>
 </section>
 
+ <!-- Hubungi Kami -->
+ <section id="hubungi-kami" class="py-5">
+    <div class="container">
+    <div class="col text-center">
+        <h1>Hubungi Kami</h1>
+        <p>Jika Anda memiliki pertanyaan atau masukan, jangan ragu untuk menghubungi kami melalui formulir di bawah ini.</p>
+     </div>
+        <!-- Tambahkan formulir kontak di sini jika diperlukan -->
+        <form action="{{ url('SaveLaporan') }}" method="POST">
+            @csrf
+            <!-- Input untuk Nama -->
+            <div class="mb-3">
+                <label for="assists" class="form-label">Nama</label>
+                <input type="text" class="form-control" name="nama" required>
+            </div>
+
+            <!-- Input untuk Email -->
+            <div class="mb-3">
+                <label for="kartu_kuning" class="form-label">Email</label>
+                <input type="text" class="form-control" name="email" required>
+            </div>
+
+            <!-- Input untuk Kritikan -->
+            <div class="mb-3">
+                <label for="kartu_merah" class="form-label">Pesan</label>
+                <input type="text" class="form-control" name="pesan" required>
+            </div>
+             <!-- kirim pesan -->
+            <input type="submit" value="Kirim" class="btn btn-primary">
+        </form>
+      </div>
+</section>
+
 
     <!-- Footer -->
     <footer class="bg-danger text-light text-center py-3">
