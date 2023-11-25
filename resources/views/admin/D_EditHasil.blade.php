@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard - Input Hasil Pertandingan</title>
+    <title>Admin Dashboard - Edit Hasil Pertandingan</title>
 
     <!-- Tambahkan tautan ke file CSS Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -82,56 +82,57 @@
             </li>
         </ul>
     </div> 
-    <!-- Content area for Input Hasil Pertandingan -->
-    <section id="input-hasil-pertandingan" class="py-5">
-        <div class="container-fluid content-area">
-            <h2>Admin Dashboard - Input Hasil Pertandingan</h2>
-    
-        <!-- user admin tampilan -->
-        <div style="position: fixed; top: 10px; right: 10px; z-index: 100;">
-            <!-- Ganti 'Nama User' dengan nama pengguna yang sedang masuk -->
-            <span style="color: #000; font-weight: bold;">{{Auth::user()->nama ?? ''}}</span>
-            <!-- Tambahkan tautan logout di sini -->
-            <a href="/logout" style="color: #dc3545; margin-left: 10px; text-decoration: none;">Logout</a>
-        </div>
 
-            <!-- Card untuk input hasil pertandingan -->
+    <!-- Content area for Edit Hasil Pertandingan -->
+    <section id="edit-hasil-pertandingan" class="py-5">
+        <div class="container-fluid content-area">
+            <h2>Admin Dashboard - Edit Hasil Pertandingan</h2>
+
+            <!-- user admin tampilan -->
+            <div style="position: fixed; top: 10px; right: 10px; z-index: 100;">
+                <!-- Ganti 'Nama User' dengan nama pengguna yang sedang masuk -->
+                <span style="color: #000; font-weight: bold;">{{Auth::user()->nama ?? ''}}</span>
+                <!-- Tambahkan tautan logout di sini -->
+                <a href="/logout" style="color: #dc3545; margin-left: 10px; text-decoration: none;">Logout</a>
+            </div>
+
+            <!-- Card untuk edit hasil pertandingan -->
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ url('save') }}" method="POST">
+                    <form action="{{ url('/update_hasil/' . $hasil->id) }}" method="POST">
                         @csrf
                         <!-- Input untuk Tanggal -->
                         <div class="mb-3">
                             <label for="tanggal" class="form-label">Tanggal</label>
-                            <input type="date" class="form-control" name="tanggal" required>
+                            <input type="date" class="form-control" name="tanggal" value="{{ $hasil->tanggal }}" required>
                         </div>
 
                         <!-- Input untuk Lawan -->
                         <div class="mb-3">
                             <label for="lawan" class="form-label">Lawan</label>
-                            <input type="text" class="form-control" name="lawan" required>
+                            <input type="text" class="form-control" name="lawan" value="{{ $hasil->lawan }}" required>
                         </div>
 
                         <!-- Input untuk Skor -->
                         <div class="mb-3">
                             <label for="skor" class="form-label">Skor</label>
-                            <input type="text" class="form-control" name="skor" required>
+                            <input type="text" class="form-control" name="skor" value="{{ $hasil->skor }}" required>
                         </div>
 
                         <!-- Input untuk Hasil -->
                         <div class="mb-3">
-                            <label for="hasil" class="form-label">Hasil</label>
+                            <label for="nama_hasil" class="form-label">Hasil</label>
                             <select class="form-select" name="nama_hasil" required>
-                                <option value="Menang">Menang</option>
-                                <option value="Seri">Seri</option>
-                                <option value="Kalah">Kalah</option>
+                                <option value="Menang" {{ $hasil->nama_hasil == 'Menang' ? 'selected' : '' }}>Menang</option>
+                                <option value="Seri" {{ $hasil->nama_hasil == 'Seri' ? 'selected' : '' }}>Seri</option>
+                                <option value="Kalah" {{ $hasil->nama_hasil == 'Kalah' ? 'selected' : '' }}>Kalah</option>
                             </select>
                         </div>
 
                         <!-- Tombol Submit -->
                         <input type="submit" value="Simpan" class="btn btn-primary">
-                          <!-- Back button -->
-                        <a href="D_Hasil" class="btn btn-outline-primary">View Data</a>
+                        <!-- Back button -->
+                        <a href="{{ url('/D_Hasil') }}" class="btn btn-outline-primary">Batal</a>
                     </form>
                 </div>
             </div>

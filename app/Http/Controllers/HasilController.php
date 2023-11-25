@@ -54,4 +54,27 @@ class HasilController extends Controller
         hasil::destroy($id);
         return redirect('D_Hasil');
     }
+
+    public function edit_hasil($id)
+    {
+        $hasil = hasil::find($id);
+        return view('admin.D_EditHasil', compact('hasil'));
+    }
+
+    public function update_hasil(Request $request, $id)
+    {
+        $hasil = hasil::find($id);
+        
+        // Update data hasil dengan data baru
+        $hasil->tanggal = $request->tanggal;
+        $hasil->lawan = $request->lawan;
+        $hasil->skor = $request->skor;
+        $hasil->nama_hasil = $request->nama_hasil;
+
+        // Simpan perubahan
+        $hasil->save();
+
+        // Redirect ke halaman D_Hasil setelah update
+        return redirect('D_Hasil');
+    }
 }

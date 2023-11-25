@@ -63,10 +63,16 @@
                 <a class="nav-link" href="D_Statistik">Statistik Pemain</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="D_InputJadwal">Input Jadwal Pertandingan</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="D_EditHasil">Edit Jadwal Pertandingan</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="D_InputHasil">Input Hasil Pertandingan</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="D_InputJadwal">Input Jadwal Pertandingan</a>
+                <a class="nav-link" href="D_EditHasil">Edit Hasil Pertandingan</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="D_InputStatistik">Input Statistik Pemain</a>

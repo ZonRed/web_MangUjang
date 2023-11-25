@@ -60,4 +60,31 @@ class StatistikController extends Controller
         return redirect('D_Statistik');
         
     }
+
+    public function edit_statistik($id)
+    {
+        $Statistik = Statistik::find($id);
+        return view('admin.D_EditStatistik', compact('Statistik'));
+    }
+
+    public function update_statistik(Request $request, $id)
+    {
+        $Statistik = Statistik::find($id);
+        
+        // Update data statistik dengan data baru
+        $Statistik ->punggung=$request->punggung;
+        $Statistik ->posisi=$request->posisi;
+        $Statistik ->nama_pemain=$request->nama_pemain;
+        $Statistik ->penampilan=$request->penampilan;
+        $Statistik ->gol=$request->gol;
+        $Statistik ->assists=$request->assists;
+        $Statistik ->kartu_kuning=$request->kartu_kuning;
+        $Statistik ->kartu_merah=$request->kartu_merah;
+
+        // Simpan perubahan
+        $Statistik->save();
+
+        // Redirect ke halaman D_Statistik setelah update
+        return redirect('D_Statistik');
+    }
 }

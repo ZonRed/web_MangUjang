@@ -91,10 +91,15 @@ Route::post('/save',[HasilController::class,'save']);
 //route delete hasil
 Route::get('/delete_hasil/{id}', 'App\Http\Controllers\HasilController@delete_hasil')->middleware('auth');
 
+// route untuk menampilkan formulir edit hasil
+Route::get('/edit_hasil/{id}', 'App\Http\Controllers\HasilController@edit_hasil')->middleware('auth');
 
+// route untuk menyimpan hasil edit
+Route::post('/update_hasil/{id}', 'App\Http\Controllers\HasilController@update_hasil')->middleware('auth');
 
 //route pengguna_hasil
 Route::get('/hasil', 'App\Http\Controllers\HasilController@pengguna_hasil');
+
 
 //route jadwal
 Route::get('/D_Jadwal', 'App\Http\Controllers\JadwalController@Jadwal');
@@ -104,8 +109,15 @@ Route::post('/SaveJadwal',[JadwalController::class,'SaveJadwal']);
 //route delete jadwal
 Route::get('/delete_jadwal/{id}', 'App\Http\Controllers\JadwalController@delete_jadwal')->middleware('auth');
 
-//route pengguna_hasil
+// route untuk menampilkan formulir edit hasil
+Route::get('/edit_jadwal/{id}', 'App\Http\Controllers\JadwalController@edit_jadwal')->middleware('auth');
+
+// route untuk menyimpan hasil edit
+Route::post('/update_jadwal/{id}', 'App\Http\Controllers\JadwalController@update_jadwal')->middleware('auth');
+
+//route pengguna_jadwal
 Route::get('/next', 'App\Http\Controllers\JadwalController@pengguna_jadwal');
+
 
 //route statistik
 Route::get('/D_Statistik', 'App\Http\Controllers\StatistikController@Statistik');
@@ -113,10 +125,17 @@ Route::get('/D_InputStatistik', 'App\Http\Controllers\StatistikController@InputS
 Route::post('/SaveStatistik',[StatistikController::class,'SaveStatistik']);
 
 //route delete statistik
-Route::get('/delete_statistik/{id}', 'App\Http\Controllers\JadwalController@delete_statistik')->middleware('auth');
+Route::get('/delete_statistik/{id}', 'App\Http\Controllers\StatistikController@delete_statistik')->middleware('auth');
+
+// route untuk menampilkan formulir edit statistik
+Route::get('/edit_statistik/{id}', 'App\Http\Controllers\StatistikController@edit_statistik')->middleware('auth');
+
+// route untuk menyimpan statistik edit
+Route::post('/update_statistik/{id}', 'App\Http\Controllers\StatistikController@update_statistik')->middleware('auth');
 
 //route pengguna_statistik
 Route::get('/statistik', 'App\Http\Controllers\StatistikController@pengguna_statistik');
+
 
 //route laporan
 Route::get('/D_Laporan', 'App\Http\Controllers\LaporanController@Laporan');

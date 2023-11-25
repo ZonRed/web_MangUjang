@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard - Input Hasil Pertandingan</title>
+    <title>Admin Dashboard - Edit Statistik Pemain</title>
 
     <!-- Tambahkan tautan ke file CSS Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -82,56 +82,77 @@
             </li>
         </ul>
     </div> 
-    <!-- Content area for Input Hasil Pertandingan -->
-    <section id="input-hasil-pertandingan" class="py-5">
-        <div class="container-fluid content-area">
-            <h2>Admin Dashboard - Input Hasil Pertandingan</h2>
-    
-        <!-- user admin tampilan -->
-        <div style="position: fixed; top: 10px; right: 10px; z-index: 100;">
-            <!-- Ganti 'Nama User' dengan nama pengguna yang sedang masuk -->
-            <span style="color: #000; font-weight: bold;">{{Auth::user()->nama ?? ''}}</span>
-            <!-- Tambahkan tautan logout di sini -->
-            <a href="/logout" style="color: #dc3545; margin-left: 10px; text-decoration: none;">Logout</a>
-        </div>
 
-            <!-- Card untuk input hasil pertandingan -->
+    <!-- Content area for Edit Hasil Pertandingan -->
+    <section id="edit-hasil-pertandingan" class="py-5">
+        <div class="container-fluid content-area">
+            <h2>Admin Dashboard - Edit Statistik Pemain</h2>
+
+            <!-- user admin tampilan -->
+            <div style="position: fixed; top: 10px; right: 10px; z-index: 100;">
+                <!-- Ganti 'Nama User' dengan nama pengguna yang sedang masuk -->
+                <span style="color: #000; font-weight: bold;">{{Auth::user()->nama ?? ''}}</span>
+                <!-- Tambahkan tautan logout di sini -->
+                <a href="/logout" style="color: #dc3545; margin-left: 10px; text-decoration: none;">Logout</a>
+            </div>
+
+            <!-- Card untuk edit hasil pertandingan -->
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ url('save') }}" method="POST">
+                    <form action="{{ url('/update_statistik/' . $Statistik->id) }}" method="POST">
                         @csrf
-                        <!-- Input untuk Tanggal -->
+                        <!-- Input untuk No Punggung -->
                         <div class="mb-3">
-                            <label for="tanggal" class="form-label">Tanggal</label>
-                            <input type="date" class="form-control" name="tanggal" required>
+                            <label for="punggung" class="form-label">No Punggung</label>
+                            <input type="text" class="form-control" name="punggung" value="{{ $Statistik->punggung }}" required>
                         </div>
 
-                        <!-- Input untuk Lawan -->
+                        <!-- Input untuk Posisi -->
                         <div class="mb-3">
-                            <label for="lawan" class="form-label">Lawan</label>
-                            <input type="text" class="form-control" name="lawan" required>
+                            <label for="posisi" class="form-label">Posisi</label>
+                            <input type="text" class="form-control" name="posisi" value="{{ $Statistik->posisi }}" required>
                         </div>
 
-                        <!-- Input untuk Skor -->
+                        <!-- Input untuk Nama Pemain -->
                         <div class="mb-3">
-                            <label for="skor" class="form-label">Skor</label>
-                            <input type="text" class="form-control" name="skor" required>
+                            <label for="nama_pemain" class="form-label">Nama Pemain</label>
+                            <input type="text" class="form-control" name="nama_pemain" value="{{ $Statistik->nama_pemain }}" required>
                         </div>
 
-                        <!-- Input untuk Hasil -->
+                        <!-- Input untuk Penampilan -->
                         <div class="mb-3">
-                            <label for="hasil" class="form-label">Hasil</label>
-                            <select class="form-select" name="nama_hasil" required>
-                                <option value="Menang">Menang</option>
-                                <option value="Seri">Seri</option>
-                                <option value="Kalah">Kalah</option>
-                            </select>
+                            <label for="penampilan" class="form-label">Penampilan</label>
+                            <input type="text" class="form-control" name="penampilan" value="{{ $Statistik->penampilan }}" required>
+                        </div>
+
+                        <!-- Input untuk Gol -->
+                        <div class="mb-3">
+                            <label for="gol" class="form-label">Gol</label>
+                            <input type="text" class="form-control" name="gol" value="{{ $Statistik->gol }}" required>
+                        </div>
+
+                        <!-- Input untuk Assists -->
+                        <div class="mb-3">
+                            <label for="assists" class="form-label">Assists</label>
+                            <input type="text" class="form-control" name="assists" value="{{ $Statistik->assists }}" required>
+                        </div>
+
+                        <!-- Input untuk Kartu Kuning -->
+                        <div class="mb-3">
+                            <label for="kartu_kuning" class="form-label">Kartu Kuning</label>
+                            <input type="text" class="form-control" name="kartu_kuning" value="{{ $Statistik->kartu_kuning }}" required>
+                        </div>
+
+                        <!-- Input untuk Kartu Merah -->
+                        <div class="mb-3">
+                            <label for="kartu_merah" class="form-label">Kartu Merah</label>
+                            <input type="text" class="form-control" name="kartu_merah" value="{{ $Statistik->kartu_merah }}" required>
                         </div>
 
                         <!-- Tombol Submit -->
                         <input type="submit" value="Simpan" class="btn btn-primary">
-                          <!-- Back button -->
-                        <a href="D_Hasil" class="btn btn-outline-primary">View Data</a>
+                        <!-- Back button -->
+                        <a href="{{ url('/D_Statistik') }}" class="btn btn-outline-primary">Batal</a>
                     </form>
                 </div>
             </div>

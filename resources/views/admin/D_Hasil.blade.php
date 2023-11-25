@@ -63,10 +63,16 @@
                 <a class="nav-link" href="D_Statistik">Statistik Pemain</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="D_InputJadwal">Input Jadwal Pertandingan</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="D_EditHasil">Edit Jadwal Pertandingan</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="D_InputHasil">Input Hasil Pertandingan</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="D_InputJadwal">Input Jadwal Pertandingan</a>
+                <a class="nav-link" href="D_EditHasil">Edit Hasil Pertandingan</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="D_InputStatistik">Input Statistik Pemain</a>
@@ -131,7 +137,7 @@
                 <td>{{$h->skor}}</td>
                 <td>{{$h->nama_hasil}}</td>
                 <td>
-                <a href="#" class="btn btn-primary">Edit</a>
+                <a href="{{ url('/edit_hasil/' . $h->id) }}" class="btn btn-primary">Edit</a>
                 <a href="{{ url('/delete_hasil/' . $h->id) }}" class="btn btn-danger">Delete</a>
                 </td>
             </tr>

@@ -56,4 +56,27 @@ class JadwalController extends Controller
         return redirect('D_Jadwal');
         
     }
+
+    public function edit_jadwal($id)
+    {
+        $Jadwal = Jadwal::find($id);
+        return view('admin.D_EditJadwal', compact('Jadwal'));
+    }
+
+    public function update_jadwal(Request $request, $id)
+    {
+        $Jadwal = Jadwal::find($id);
+        
+        // Update data jadwal dengan data baru
+        $Jadwal->tanggal = $request->tanggal;
+        $Jadwal->lawan = $request->lawan;
+        $Jadwal->tempat = $request->tempat;
+        $Jadwal->waktu = $request->waktu;
+
+        // Simpan perubahan
+        $Jadwal->save();
+
+        // Redirect ke halaman D_Jadwal setelah update
+        return redirect('D_Jadwal');
+    }
 }
