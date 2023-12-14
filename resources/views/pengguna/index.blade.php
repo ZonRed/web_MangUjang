@@ -186,6 +186,7 @@
     <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
 
 
+
     <!-- Add the following script for HERE Maps -->
 <script>
     const platform = new H.service.Platform({ apikey: "ensbOT2QMaGsGq8JnAS8Sbu45WkyV8rVtyapP1N-l9M" });
@@ -202,24 +203,6 @@
     window.addEventListener("resize", () => map.getViewPort().resize());
     const behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
     const ui = H.ui.UI.createDefault(map, defaultLayers);
-
-    // Create a zoom control
-    const zoomControl = new H.ui.ZoomControl({ zoom: 3 });
-    ui.addControl("zoom", zoomControl);
-
-    // Create a custom location control
-    const locationControl = new H.ui.Control(
-        'default', {
-        'component': {
-            onStateChange: function (evt) {
-                if (evt.state === 'PENDING') {
-                    map.setCenter({ lat: -7.295538160587548, lng: 112.75289185215573 });
-                    map.setZoom(13);
-                }
-            }
-        }
-    });
-    ui.addControl("location", locationControl);
 
     // Begin geocoding
     const searchText = "fanbase location";
@@ -241,7 +224,6 @@
         ui.addBubble(bubble);
     });
 </script>
-
 
 
 </body>
