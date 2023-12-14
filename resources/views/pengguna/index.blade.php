@@ -179,23 +179,70 @@
     <!-- Tambahkan tautan ke file JavaScript Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
-<!-- Add the Google Maps API script -->
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC26fzMOt39Pp0VKMoZ-GsSFUjK9HGyShg&callback=initMap"></script>
+   <!-- Replace the Google Maps API script with HERE Maps API script -->
+   <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
 
 
-     <!-- Add the following script for Google Maps -->
-     <script>
-        // Function to initialize the map
-        function initMap() {
-            // Specify the map options
-            var mapOptions = {
-                center: { lat: -7.245971, lng: 112.737648 }, // Set the center of the map to your desired coordinates
-                zoom: 15, // Set the zoom level
-            };
-
-            // Create the map object
-            var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    <!-- Add the following script for HERE Maps -->
+<script>
+    const platform = new H.service.Platform({ apikey: "ensbOT2QMaGsGq8JnAS8Sbu45WkyV8rVtyapP1N-l9M" });
+    const defaultLayers = platform.createDefaultLayers();
+    const map = new H.Map(
+        document.getElementById("map"),
+        defaultLayers.vector.normal.map,
+        {
+            center: { lat: -7.295538160587548, lng: 112.75289185215573 },
+            zoom: 13,
+            pixelRatio: window.devicePixelRatio || 1,
         }
-    </script>
+    );
+    window.addEventListener("resize", () => map.getViewPort().resize());
+    const behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+    const ui = H.ui.UI.createDefault(map, defaultLayers);
+
+    // Create a zoom control
+    const zoomControl = new H.ui.ZoomControl({ zoom: 3 });
+    ui.addControl("zoom", zoomControl);
+
+    // Create a custom location control
+    const locationControl = new H.ui.Control(
+        'default', {
+        'component': {
+            onStateChange: function (evt) {
+                if (evt.state === 'PENDING') {
+                    map.setCenter({ lat: -7.295538160587548, lng: 112.75289185215573 });
+                    map.setZoom(13);
+                }
+            }
+        }
+    });
+    ui.addControl("location", locationControl);
+
+    // Begin geocoding
+    const searchText = "fanbase location";
+    const geocoder = platform.getGeocodingService();
+
+    // Use geocode endpoint to get coordinates for the specified location
+    geocoder.geocode({ searchText }, (result) => {
+        const location = result.Response.View[0].Result[0].Location.DisplayPosition;
+        const { Latitude: lat, Longitude: lng } = location;
+
+        // Create a marker at the specified coordinates
+        const marker = new H.map.Marker({ lat, lng });
+        map.addObject(marker);
+
+        // Optionally, you can add an info bubble to the marker
+        const bubble = new H.ui.InfoBubble({ lng, lat: lat - 0.02 }, {
+            content: '<p>Fanbase Location</p>'
+        });
+        ui.addBubble(bubble);
+    });
+</script>
+
+
+
 </body>
 </html>
