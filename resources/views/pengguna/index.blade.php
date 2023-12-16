@@ -8,6 +8,12 @@
     <!-- Tambahkan tautan ke file CSS Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
+     <!-- Tambahkan tautan api herestyle -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://js.api.here.com/v3/3.1/mapsjs-ui.css"
+    />
     <style>
        .card {
         max-height: 100%; /* Mengatur tinggi maksimum card */
@@ -180,7 +186,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
    <!-- Replace the Google Maps API script with HERE Maps API script -->
-   <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
     <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
     <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
     <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
@@ -188,15 +194,16 @@
 
 
     <!-- Add the following script for HERE Maps -->
-<script>
+    <script>
+      function initializeMap() {
     const platform = new H.service.Platform({ apikey: "ensbOT2QMaGsGq8JnAS8Sbu45WkyV8rVtyapP1N-l9M" });
     const defaultLayers = platform.createDefaultLayers();
     const map = new H.Map(
         document.getElementById("map"),
         defaultLayers.vector.normal.map,
         {
-            center: { lat: -7.295538160587548, lng: 112.75289185215573 },
-            zoom: 13,
+            center: { lat: -1.1876317727399308, lng: 113.17756922746491 },
+            zoom: 7, // Adjust the initial zoom level
             pixelRatio: window.devicePixelRatio || 1,
         }
     );
@@ -204,27 +211,21 @@
     const behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
     const ui = H.ui.UI.createDefault(map, defaultLayers);
 
-    // Begin geocoding
-    const searchText = "fanbase location";
-    const geocoder = platform.getGeocodingService();
+    // Function to add markers to the map
+    function addMarkersToMap(map) {
+        var fanbasemarker = new H.map.Marker({ lat: -6.109111954777973, lng: 106.75683458696955 });
+        map.addObject(fanbasemarker);
+    }
 
-    // Use geocode endpoint to get coordinates for the specified location
-    geocoder.geocode({ searchText }, (result) => {
-        const location = result.Response.View[0].Result[0].Location.DisplayPosition;
-        const { Latitude: lat, Longitude: lng } = location;
+    // Call the function to add markers when the window is loaded
+    window.onload = function () {
+        addMarkersToMap(map);
+    }
+}
 
-        // Create a marker at the specified coordinates
-        const marker = new H.map.Marker({ lat, lng });
-        map.addObject(marker);
-
-        // Optionally, you can add an info bubble to the marker
-        const bubble = new H.ui.InfoBubble({ lng, lat: lat - 0.02 }, {
-            content: '<p>Fanbase Location</p>'
-        });
-        ui.addBubble(bubble);
-    });
-</script>
-
+// Initialize the map when the script is loaded
+initializeMap();
+    </script>
 
 </body>
 </html>
