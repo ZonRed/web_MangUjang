@@ -141,6 +141,9 @@
             </div>
             <!-- Add a container for the map -->
             <div id="map"></div>
+            <div class="text-center mt-3">
+                <button class="btn btn-primary" id="openGoogleMapsBtn">Buka di Google Maps</button>
+            </div>
         </div>
     </section>
 
@@ -195,36 +198,46 @@
 
     <!-- Add the following script for HERE Maps -->
     <script>
-      function initializeMap() {
-    const platform = new H.service.Platform({ apikey: "ensbOT2QMaGsGq8JnAS8Sbu45WkyV8rVtyapP1N-l9M" });
-    const defaultLayers = platform.createDefaultLayers();
-    const map = new H.Map(
-        document.getElementById("map"),
-        defaultLayers.vector.normal.map,
-        {
-            center: { lat: -1.1876317727399308, lng: 113.17756922746491 },
-            zoom: 7, // Adjust the initial zoom level
-            pixelRatio: window.devicePixelRatio || 1,
+        function initializeMap() {
+        const platform = new H.service.Platform({ apikey: "ensbOT2QMaGsGq8JnAS8Sbu45WkyV8rVtyapP1N-l9M" });
+        const defaultLayers = platform.createDefaultLayers();
+        const map = new H.Map(
+            document.getElementById("map"),
+            defaultLayers.vector.normal.map,
+            {
+                center: { lat: -1.1876317727399308, lng: 113.17756922746491 },
+                zoom: 5, // Adjust the initial zoom level
+                pixelRatio: window.devicePixelRatio || 1,
+            }
+        );
+        window.addEventListener("resize", () => map.getViewPort().resize());
+        const behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+        const ui = H.ui.UI.createDefault(map, defaultLayers);
+
+        // Function to add markers to the map
+        function addMarkersToMap(map) {
+            var fanbasemarker = new H.map.Marker({ lat: -7.295122816050286, lng: 112.75302631752614 });
+            map.addObject(fanbasemarker);
         }
-    );
-    window.addEventListener("resize", () => map.getViewPort().resize());
-    const behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
-    const ui = H.ui.UI.createDefault(map, defaultLayers);
 
-    // Function to add markers to the map
-    function addMarkersToMap(map) {
-        var fanbasemarker = new H.map.Marker({ lat: -6.109111954777973, lng: 106.75683458696955 });
-        map.addObject(fanbasemarker);
+        // Call the function to add markers when the window is loaded
+        window.onload = function () {
+            addMarkersToMap(map);
+        }
     }
 
-    // Call the function to add markers when the window is loaded
-    window.onload = function () {
-        addMarkersToMap(map);
-    }
-}
+    // Initialize the map when the script is loaded
+    initializeMap();
 
-// Initialize the map when the script is loaded
-initializeMap();
+    // Function to open the location in Google Maps
+    function openGoogleMaps() {
+        const fanbaseLocation = { lat: -6.109111954777973, lng: 106.75683458696955 };
+        const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${fanbaseLocation.lat},${fanbaseLocation.lng}`;
+        window.open(googleMapsUrl, '_blank');
+    }
+
+    // Set up the click event for the button
+    document.getElementById('openGoogleMapsBtn').addEventListener('click', openGoogleMaps);
     </script>
 
 </body>
