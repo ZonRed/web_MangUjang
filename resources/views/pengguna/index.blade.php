@@ -231,7 +231,7 @@
 
     // Function to open the location in Google Maps
     function openGoogleMaps() {
-        const fanbaseLocation = { lat: -6.109111954777973, lng: 106.75683458696955 };
+        const fanbaseLocation = { lat: -7.295122816050286, lng: 112.75302631752614 };
         const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${fanbaseLocation.lat},${fanbaseLocation.lng}`;
         window.open(googleMapsUrl, '_blank');
     }
